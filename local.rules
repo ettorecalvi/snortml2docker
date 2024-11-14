@@ -1,0 +1,12 @@
+alert http any any -> any 80 (
+    msg:"SQL Injection Attempt Detected - Advanced Pattern";
+    flow:to_server,established;
+    http_uri:path;
+    content:"/php/admin_notification.php", nocase;
+    http_uri:query;
+    content:"foo=", nocase;
+    pcre:"/1%27%20OR%201=1%2D%2D/i";
+    reference:cve,2012-2998;
+    classtype:web-application-attack;
+    sid:1;
+)
