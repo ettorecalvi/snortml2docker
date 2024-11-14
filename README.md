@@ -182,3 +182,8 @@ P0:snort_ml:classifier:1: input (query): foo=1' OR 2=3----
 P0:snort_ml:classifier:1: output: 0.964244
 P0:snort_ml:classifier:1: <ALERT>
 ```
+
+## Conclusion:
+In this example, we observed a trained model capable of detecting and (in the future) potentially stopping unknown attacks. This setup demonstrates a static version of what this model could achieve. In a "production mode," it would be possible to continuously train the model by adding newly discovered malicious strings, enhancing the confidence and effectiveness of its operation.
+
+I would like to thank the Snort 3.0 Team for developing and maintaining this open model. You can find their GitHub repository here: https://github.com/snort3, and join the Discord community here: https://discord.com/channels/856942140880977971/856942141643948055.
